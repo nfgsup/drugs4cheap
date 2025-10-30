@@ -1,0 +1,38 @@
+:root{
+  --bg:#fff;
+  --text:#111;
+  --muted:#666;
+  --accent:#000;
+  --card:#f8f8f8;
+  --maxw:1100px;
+  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text)}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid #eee;max-width:var(--maxw);margin:0 auto}
+.brand{font-weight:700;font-size:1.25rem}
+.controls button{margin-left:8px;padding:6px 10px;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer}
+.hero{max-width:var(--maxw);margin:20px auto;padding:10px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:var(--maxw);margin:8px auto;padding:8px}
+.card{background:var(--card);padding:12px;border-radius:8px;border:1px solid #eee;display:flex;flex-direction:column;gap:8px;align-items:center}
+.card img{max-width:160px;height:auto;border-radius:6px}
+.card h3{margin:0;font-size:1rem;text-align:center}
+.price{font-weight:700}
+.meta{font-size:0.9rem;color:var(--muted)}
+.btn{display:inline-block;padding:8px 12px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.cart-panel{position:fixed;right:16px;top:80px;width:320px;background:#fff;border:1px solid #ddd;padding:12px;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,0.08);display:none}
+.cart-panel[aria-hidden="false"]{display:block}
+/* allow scrolling when cart content is tall so checkout controls remain reachable */
+.cart-panel{
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+  padding-bottom: 18px;
+}
+.cart-summary{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.age-check{font-size:0.85rem;color:var(--muted)}
+.close{background:#eee;border:0;padding:8px;border-radius:6px;cursor:pointer}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);visibility:hidden;opacity:0;transition:opacity .15s}
+.modal[aria-hidden="false"]{visibility:visible;opacity:1}
+.modal-content{background:#fff;padding:18px;border-radius:8px;max-width:520px;width:90%;max-height:80vh;overflow:auto;}
+footer{max-width:var(--maxw);margin:20px auto;padding:10px;text-align:center;color:var(--muted);font-size:0.85rem}

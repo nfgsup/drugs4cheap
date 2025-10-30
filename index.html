@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drugs4Cheap — Low-price Alcohol & Cigarettes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  {
+    "imports": {}
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Drugs4Cheap</div>
+    <div class="controls">
+      <button id="langToggle">Italiano</button>
+      <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 id="headline">Lowest prices on alcohol & cigarettes</h1>
+      <p id="subhead">Quality brands. Fast checkout. Age verification required.</p>
+
+      <!-- Search bar -->
+      <div class="search-wrap" style="margin-top:12px;max-width:600px">
+        <input id="searchInput" type="search" placeholder="Search products (e.g. 'Heineken', 'Marlboro')" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd">
+      </div>
+    </section>
+
+    <section class="products" id="products"></section>
+
+    <!-- FAQ / Reviews -->
+    <section id="faq" style="max-width:var(--maxw);margin:18px auto;padding:12px">
+      <h2 style="margin:0 0 8px 0">FAQ & Reviews</h2>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <details open>
+          <summary style="font-weight:700">Is this site safe to use?</summary>
+          <p style="margin:8px 0;color:var(--muted)">Customer reviews consistently say the site is secure and checkout is fast. (Demo text.)</p>
+        </details>
+        <details>
+          <summary style="font-weight:700">Are the products genuine?</summary>
+          <p style="margin:8px 0;color:var(--muted)">Reviews state products are high quality and as described. (Demo text.)</p>
+        </details>
+        <details>
+          <summary style="font-weight:700">Shipping and address</summary>
+          <p style="margin:8px 0;color:var(--muted)">We ask for a shipping address at checkout for demo redemption purposes only. This is a fictional demo site.</p>
+        </details>
+        <details>
+          <summary style="font-weight:700">User reviews</summary>
+          <p style="margin:8px 0;color:var(--muted)">
+            D. Trump : This site is totally legit and AWESOME , i used it and fell in love with the quality<br>
+            Baby Gang : I am an Italian rapper , i always use these substances and i love them <br>
+            Simba la Rue : I do songs in Italian , i love these products <br>
+            V. Rossi: I love the substances
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+      <h2 id="cartTitle">Your Cart</h2>
+      <div id="cartItems"></div>
+      <div class="cart-summary">
+        <label class="age-check"><input type="checkbox" id="ageConfirm"> I confirm I am 18+</label>
+        <div class="total">Total: €<span id="totalPrice">0.00</span></div>
+        <button id="checkoutBtn" class="btn">Checkout</button>
+      </div>
+      <button id="closeCart" class="close">Close</button>
+    </aside>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <h3 id="modalTitle">Checkout</h3>
+        <div id="modalBody"></div>
+        <button id="modalClose" class="btn">Close</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <small id="footerLegal">We only sell to adults (18+). Prices shown are sample retail prices. Cigarettes: €1.00–€2.50 (20–30% off). Alcohol: €3.00–€5.00.</small>
+    <div style="margin-top:6px;font-size:0.75rem;color:#999">This site is fictional and for demo purposes only — nothing on this site can be ordered.</div>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
