@@ -48,7 +48,7 @@ const productsData = [
   { id: 'p35', title: "Limited Cigar Pack", price: 1.50, category: 'Cigars', img: 'images (2).jpg', desc: 'Cigars - The good ol Fashioned way). 20–30% off.' },
 
 
-  { id: 'p21', title: "Kalternmühl Kvass", price: 2.00, category: 'alcohol', img: '/kvass.jpg', desc: 'Traditional kvass beverage, demo bottle. Discount applied: ~33% off.' },
+  { id: 'p21', title: "Kalternmühl Kvass", price: 2.00, category: 'alcohol', img: 'kvass.jpg', desc: 'Traditional kvass beverage, demo bottle. Discount applied: ~33% off.' },
 ];
 
 const productsEl = document.getElementById('products');
