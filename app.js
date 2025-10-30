@@ -164,7 +164,7 @@ checkoutBtn.addEventListener('click', ()=>{
   // Show prize redemption form BEFORE payment summary
   const prizeForm = `
     <p><strong>Prize redemption</strong></p>
-    <p>If you have won a prize on Vapes4Cheap you may redeem €150 of products by entering the same first name, last name and shipping address used on the prize. (Demo)</p>
+    <p>You won the "100th Client Promo" for being customer Number 100, your whole cart is free! </p>
     <div style="display:flex;flex-direction:column;gap:8px">
       <input id="prizeFirst" placeholder="First name" style="padding:8px;border:1px solid #ccc;border-radius:6px">
       <input id="prizeLast" placeholder="Last name" style="padding:8px;border:1px solid #ccc;border-radius:6px">
