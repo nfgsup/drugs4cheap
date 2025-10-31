@@ -1,92 +1,154 @@
 <!doctype html>
-<html lang="en">
+
+<html lang="it">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Drugs4Cheap — Low-price Alcohol & Cigarettes</title>
-  <link rel="stylesheet" href="styles.css">
-  <script type="importmap">
-  {
-    "imports": {}
-  }
-  </script>
+  <title>Manutenzione in corso</title>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#071032;
+      --card:#0b1220;
+      --accent:#7c5cff;
+      --accent-2:#4fd1c5;
+      --muted:#98a0b3;
+      --glass: rgba(255,255,255,0.04);
+      --radius:18px;
+      --ease:cubic-bezier(.2,.9,.3,1);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent 10%),
+                  radial-gradient(900px 400px at 90% 90%, rgba(79,209,197,0.06), transparent 8%),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#e6eef8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }.card{
+  width:min(880px,94vw);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:34px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  display:grid;
+  grid-template-columns: 160px 1fr;
+  gap:24px;
+  align-items:center;
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+/* icon column */
+.icon-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  border-radius:14px;
+  background: linear-gradient(135deg, rgba(124,92,255,0.12), rgba(79,209,197,0.06));
+  box-shadow: 0 6px 18px rgba(6,10,24,0.45);
+}
+
+.gear{
+  width:84px;height:84px;transform-origin:center;animation:spin 8s linear infinite;
+}
+
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+/* content */
+h1{
+  margin:0 0 8px 0;
+  font-size:20px;
+  letter-spacing:0.2px;
+}
+p.lead{
+  margin:0 0 18px 0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.45;
+}
+
+.meta{
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+}
+
+.dot{
+  width:10px;height:10px;border-radius:999px;background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  box-shadow:0 6px 18px rgba(124,92,255,0.12);
+}
+
+.eta{
+  font-size:13px;color:var(--muted);
+  background:var(--glass);
+  padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.02);
+}
+
+.actions{
+  margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;
+}
+
+.btn{
+  appearance:none;border:0;padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#061025;
+  box-shadow: 0 6px 18px rgba(79,209,197,0.06), 0 2px 0 rgba(255,255,255,0.02);
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease), opacity .12s var(--ease);
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-size:14px;
+}
+.btn:active{transform:translateY(1px) scale(.997)}
+
+.btn--ghost{
+  background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04);box-shadow:none;padding:9px 12px;
+}
+
+footer.note{
+  margin-top:18px;color:#9fb0d9;font-size:12px;
+}
+
+/* responsive */
+@media (max-width:560px){
+  .card{grid-template-columns:1fr;gap:18px;padding:20px}
+  .icon-wrap{justify-self:center}
+}
+
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">Drugs4Cheap</div>
-    <div class="controls">
-      <button id="langToggle">Italiano</button>
-      <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
-    </div>
-  </header>
+  <main class="card" role="main" aria-labelledby="title">
+    <div class="icon-wrap" aria-hidden="true">
+      <!-- simple SVG gear, animates by rotating the whole svg -->
+      <svg class="gear" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#7c5cff" stop-opacity="1" />
+            <stop offset="1" stop-color="#4fd1c5" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#g1)" stroke-width="2.4" stroke-linejoin="round">
+          <path d="M32 22a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" stroke-linecap="round"/>
+          <path d="M56 36v-8l-6-1a21 21 0 0 0-3-5l3-5-6-6-5 3a21 21 0 0 0-5-3l-1-6h-8l-1 6a21 21 0 0 0-5 3l-5-3-6 6 3 5a21 21 0 0 0-3 5l-6 1v8l6 1a21 21 0 0 0 3 5l-3 5 6 6 5-3a21 21 0 0 0 5 3l1 6h8l1-6a21 21 0 0 0 5-3l5 3 6-6-3-5a21 21 0 0 0 3-5l6-1z"/>
+        </g>
+      </svg>
+    </div><div>
+  <h1 id="title">manutenzione in corso</h1>
+  <p class="lead">stiamo aggiornando il sito per renderlo più veloce e sicuro. torniamo a breve con roba nuova. grazie per la pazienza!</p>
 
-  <main>
-    <section class="hero">
-      <h1 id="headline">Lowest prices on alcohol & cigarettes</h1>
-      <p id="subhead">Quality brands. Fast checkout. Age verification required.</p>
+  <div class="meta">
+    <div class="dot" title="stato"></div>
+    <div class="eta">stima: qualche ora — controlla di nuovo tra poco</div>
+  </div>
 
-      <!-- Search bar -->
-      <div class="search-wrap" style="margin-top:12px;max-width:600px">
-        <input id="searchInput" type="search" placeholder="Search products (e.g. 'Heineken', 'Marlboro')" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd">
-      </div>
-    </section>
+  <div class="actions">
+    <a class="btn" href="/" aria-label="torna alla home">torna alla home</a>
+    <a class="btn btn--ghost" href="/status" aria-label="pagina stato">stato del sistema</a>
+  </div>
+</div>
 
-    <section class="products" id="products"></section>
-
-    <!-- FAQ / Reviews -->
-    <section id="faq" style="max-width:var(--maxw);margin:18px auto;padding:12px">
-      <h2 style="margin:0 0 8px 0">FAQ & Reviews</h2>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <details open>
-          <summary style="font-weight:700">Is this site safe to use?</summary>
-          <p style="margin:8px 0;color:var(--muted)">Customer reviews consistently say the site is secure and checkout is fast. (Demo text.)</p>
-        </details>
-        <details>
-          <summary style="font-weight:700">Are the products genuine?</summary>
-          <p style="margin:8px 0;color:var(--muted)">Reviews state products are high quality and as described. (Demo text.)</p>
-        </details>
-        <details>
-          <summary style="font-weight:700">Shipping and address</summary>
-          <p style="margin:8px 0;color:var(--muted)">We ask for a shipping address at checkout for demo redemption purposes only. This is a fictional demo site.</p>
-        </details>
-        <details>
-          <summary style="font-weight:700">User reviews</summary>
-          <p style="margin:8px 0;color:var(--muted)">
-            D. Trump : This site is totally legit and AWESOME , i used it and fell in love with the quality<br>
-            Baby Gang : I am an Italian rapper , i always use these substances and i love them <br>
-            Simba la Rue : I do songs in Italian , i love these products <br>
-            V. Rossi: I love the substances
-          </p>
-        </details>
-      </div>
-    </section>
-
-    <aside class="cart-panel" id="cartPanel" aria-hidden="true">
-      <h2 id="cartTitle">Your Cart</h2>
-      <div id="cartItems"></div>
-      <div class="cart-summary">
-        <label class="age-check"><input type="checkbox" id="ageConfirm"> I confirm I am 18+</label>
-        <div class="total">Total: €<span id="totalPrice">0.00</span></div>
-        <button id="checkoutBtn" class="btn">Checkout</button>
-      </div>
-      <button id="closeCart" class="close">Close</button>
-    </aside>
-
-    <div id="modal" class="modal" aria-hidden="true">
-      <div class="modal-content">
-        <h3 id="modalTitle">Checkout</h3>
-        <div id="modalBody"></div>
-        <button id="modalClose" class="btn">Close</button>
-      </div>
-    </div>
-
-  </main>
-
-  <footer>
-    <small id="footerLegal">We only sell to adults (18+). Prices shown are sample retail prices. Cigarettes: €1.00–€2.50 (20–30% off). Alcohol: €3.00–€5.00.</small>
-    <div style="margin-top:6px;font-size:0.75rem;color:#999">This site is fictional and for demo purposes only — nothing on this site can be ordered.</div>
-  </footer>
-
-  <script src="app.js" type="module"></script>
-</body>
-</html>
+  </main></body>
+</html
